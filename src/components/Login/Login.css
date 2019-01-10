@@ -1,0 +1,15 @@
+
+.login {
+    display: block;
+}
+.login .wrapper {
+    margin: 0 auto;
+    margin-top: 20px;
+    border-style: dashed;
+}
+
+.login .header {
+    width: 100%;
+    margin: 15px 0;
+    text-align: center;
+}

@@ -1,23 +1,14 @@
-import createSagaMiddleware from 'redux-saga';
+import thunk from "redux-thunk";
 import { compose, createStore, combineReducers, applyMiddleware } from "redux";
 
-const sagaMiddleware = createSagaMiddleware();
+import auth from "./auth/auth.reducer";
 
-import { watchPosts } from "./posts/posts.saga";
+const rootReducer = combineReducers({ auth });
 
-import app from "./app/app.reducer";
-import basket from "./basket/basket.reducer";
-import posts from "./posts/posts.reducer";
-
-const rootReducer = combineReducers({ app, basket, posts });
-
-const store = createStore(rootReducer, undefined, compose(
-	applyMiddleware(sagaMiddleware),
-	window.devToolsExtension ? window.devToolsExtension() : (f) => f
-));
-
-sagaMiddleware.run(watchPosts);
-// store.dispatch(initialize());
+const store = createStore(rootReducer, compose(
+	applyMiddleware(thunk),
+	window.devToolsExtension ? window.devToolsExtension() : f => f
+))
 
 
 export default store;
