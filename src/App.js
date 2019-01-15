@@ -17,14 +17,16 @@ import Header from "./components/Header/Header";
 import HomePage from "./containers/HomePage/HomePage";
 import LoginPage from "./containers/LoginPage/LoginPage";
 import NotFoundPage from "./containers/NotFoundPage/NotFoundPage";
+import Room from "./containers/Room/Room";
 
 
 import * as authActions from "./modules/auth/auth.actions";
 
 import "react-toastify/dist/ReactToastify.css";
 
-class App extends Component {
+import "./App.css";
 
+class App extends Component {
 	componentDidMount() {
 		this.props.getCurrentUserIfExist();
 	}
@@ -39,30 +41,41 @@ class App extends Component {
 				<ToastContainer />
 				<LoaderContainer />
 				{ this.props.user && <Header avatarUrl={this.props.user.photoURL} userName={this.props.user.displayName}  /> }
-				<Switch>
-					<PrivateRoute
-						exact
-						path={routes.homePage}
-						state={this.props.user}
-						to={routes.login}
-						component={HomePage}
-					/>
+				<div className="app-content">
+					<Switch>
+						<PrivateRoute
+							exact
+							path={routes.homePage}
+							state={this.props.user}
+							to={routes.login}
+							component={HomePage}
+						/>
 
-					<PrivateRoute
-						exact
-						path={routes.login}
-						state={!this.props.user}
-						to={routes.homePage}
-						component={LoginPage}
-					/>
-					<PrivateRoute
-						exact
-						path={""}
-						state={this.props.user}
-						to={routes.login}
-						component={NotFoundPage}
-					/>
-				</Switch>
+						<PrivateRoute
+							exact
+							path={routes.login}
+							state={!this.props.user}
+							to={routes.homePage}
+							component={LoginPage}
+						/>
+
+						<PrivateRoute
+							exact
+							path={routes.room}
+							state={this.props.user}
+							to={routes.login}
+							component={Room}
+						/>
+
+						<PrivateRoute
+							exact
+							path={""}
+							state={this.props.user}
+							to={routes.login}
+							component={NotFoundPage}
+						/>
+					</Switch>
+				</div>
 			</div>
 		);
 	}
