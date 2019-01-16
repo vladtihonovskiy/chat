@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm install webpack-dev-server -g &&./node_modules/.bin/webpack-dev-server --open --mode=development",
+    "start": "./node_modules/.bin/webpack-dev-server --open --mode=development",
     "build": "./node_modules/.bin/webpack --mode=production",
     "test": "jest",
     "lint": "./node_modules/.bin/eslint ./src"
