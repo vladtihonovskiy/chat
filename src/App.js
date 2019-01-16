@@ -43,6 +43,7 @@ class App extends Component {
 				{ this.props.user && <Header avatarUrl={this.props.user.photoURL} userName={this.props.user.displayName}  /> }
 				<div className="app-content">
 					<Switch>
+
 						<PrivateRoute
 							exact
 							path={routes.homePage}
