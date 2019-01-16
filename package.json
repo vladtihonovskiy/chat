@@ -6,6 +6,7 @@
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server --open --mode=development",
     "build": "./node_modules/.bin/webpack --mode=production",
+    "heroku-postbuild": "webpack -p",
     "test": "jest",
     "lint": "./node_modules/.bin/eslint ./src"
   },
@@ -56,8 +57,5 @@
     "redux-act": "^1.7.4",
     "redux-saga": "^0.16.2",
     "redux-thunk": "^2.3.0",
-    "webpack": "^4.17.1",
-    "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.5"
   }
 }
