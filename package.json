@@ -8,7 +8,8 @@
     "dev": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "test": "jest",
-    "lint": "./node_modules/.bin/eslint ./src"
+    "lint": "./node_modules/.bin/eslint ./src",
+    "herokuPush": "./heroku"
   },
   "author": "",
   "license": "ISC",
