@@ -135,7 +135,6 @@ module.exports = {
 				removeStyleLinkTypeAttributese: true,
 				useShortDoctype: true
 			},
-			favicon: 'src/images/favicon.png'
 		}),
 		new ErrorOverlayPlugin(),
 		new CleanWebpackPlugin(path.resolve(__dirname, 'build')),
