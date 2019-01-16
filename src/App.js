@@ -44,6 +44,7 @@ class App extends Component {
 				<div className="app-content">
 					<Switch>
 
+
 						<PrivateRoute
 							exact
 							path={routes.homePage}
