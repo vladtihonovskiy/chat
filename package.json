@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/webpack-dev-server --open --mode=development",
+    "start": "node ./server.js",
+    "dev": "./node_modules/.bin/webpack-dev-server --open --mode=development",
     "build": "./node_modules/.bin/webpack --mode=production",
     "test": "jest",
     "lint": "./node_modules/.bin/eslint ./src"
@@ -25,6 +26,7 @@
     "css-loader": "^1.0.0",
     "error-overlay-webpack-plugin": "^0.1.5",
     "eslint": "^5.12.0",
+    "express": "^4.16.4",
     "html-webpack-plugin": "^3.2.0",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
