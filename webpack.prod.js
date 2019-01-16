@@ -10,7 +10,7 @@ module.exports = {
 	devtool: "devtool: 'source-map'",
 	entry: ["babel-polyfill", "./src/index.js"],
 	output: {
-		path: path.resolve(__dirname, 'build/app'),
+		path: path.resolve(__dirname, 'build'),
 		filename: 'bundle.js',
 		publicPath: ''
 	},
@@ -137,15 +137,15 @@ module.exports = {
 			},
 		}),
 		new ErrorOverlayPlugin(),
-		new CleanWebpackPlugin(path.resolve(__dirname, 'build')),
-		new webpack.ProvidePlugin({
-			TWEEN: path.resolve(__dirname, './src/helpers/libs/tween.js'),
-			wrapperImage: path.resolve(__dirname, './src/helpers/ImgWrapper/ImgWrapper'),
-		}),
-		new CopyWebpackPlugin([
-			{ from: path.resolve(__dirname, './src/mainLoginPage'), to: path.resolve(__dirname, 'build') },
-			// { from: path.resolve(__dirname, 'build/app'), to: path.resolve(__dirname, 'build/app/app') }
-
-		])
+		// new CleanWebpackPlugin(path.resolve(__dirname, 'build')),
+		// new webpack.ProvidePlugin({
+		// 	TWEEN: path.resolve(__dirname, './src/helpers/libs/tween.js'),
+		// 	wrapperImage: path.resolve(__dirname, './src/helpers/ImgWrapper/ImgWrapper'),
+		// }),
+		// new CopyWebpackPlugin([
+		// 	{ from: path.resolve(__dirname, './src/mainLoginPage'), to: path.resolve(__dirname, 'build') },
+		// 	// { from: path.resolve(__dirname, 'build/app'), to: path.resolve(__dirname, 'build/app/app') }
+		//
+		// ])
 	]
 };
